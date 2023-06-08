@@ -1,151 +1,151 @@
 Rank,Title,Age(hours),Points,Comments
-1,This site is no longer solar powered for now (andrewjvpowell.com),1.0,92,1
-2,Fq: Jq for Binary Formats (github.com/wader),8.0,388,8
-3,Bytes are all you need: Transformers operating directly on file bytes (arxiv.org),3.0,81,3
-4,Connect to your Raspberry Pi over USB using gadget mode (howchoo.com),3.0,78,3
-5,CodeCompose: A large-scale industrial deployment of AI-assisted code authoring (arxiv.org),4.0,61,4
-6,OpenAI's plans according to Sam Altman removed at OpenAI's request (humanloop.com),1.0,138,1
-7,Red Hat dropping support for LibreOffice (lwn.net),9.0,259,9
-8,Meticulous (YC S21) Is Hiring Founding Engineer to Build AI for UI Testing,0.8333333333333334,0,50
-9,Efficiently Searching In-Memory Sorted Arrays: Revenge of Interpolation Search? [pdf] (wisc.edu),1.0,13,1
-10,Reddit Became the Enemy – With Apollo Developer Christian Selig [video] (youtube.com),1.0,71,1
-11,What are the risks of being an older father? (bbc.com),0.7166666666666667,25,43
-12,Hash Functions (bretmulvey.com),4.0,31,4
-13,Framework Laptop 16 Deep Dive: Display (frame.work),2.0,73,2
-14,Sleight-of-hand magic trick only fools monkeys with opposable thumbs (cam.ac.uk),9.0,107,9
-15,A DIY business card that runs Linux (2019) (thirtythreeforty.net),5.0,157,5
-16,"Don’t store cash in Venmo and PayPal, US regulator warns (cnn.com)",0.9,26,54
-17,EBPFGuard: a Rust Library Mitigation of Threats Using LSM Hooks (deepfence.io),3.0,21,3
-18,M.U.L.E. Online (puzzud.itch.io),1.0,6,1
-19,The diffusion of scientific discovery (tchristos.com),2.0,9,2
-20,Infinite tiling pattern could end a 60-year mathematical quest (nature.com),4.0,22,4
-21,Decoding small QR codes by hand (2012) (qartis.com),14.0,269,14
-22,"What Vale taught me about linear types, borrowing, and memory safety (verdagon.dev)",9.0,64,9
-23,The Importance of a Name (joebordes.com),2.0,8,2
-24,Leaked source – CS:GO (lwss.github.io),3.0,130,3
-25,USB armory – The open source flash-drive-sized computer by WithSecure Foundry (github.com/usbarmory),6.0,27,6
-26,StyleDrop: Text-to-Image Generation in Any Style (styledrop.github.io),4.0,24,4
-27,Keyd: Linux Key Remapper (github.com/rvaiya),9.0,111,9
-28,For the badge: Badges for badges' sake (forthebadge.com),10.0,86,10
-29,Federal judge: No AI in my courtroom unless a human verifies its accuracy (arstechnica.com),0.8,6,48
-30,Amazon and Google fund anti-abortion lawmakers through complex shell game (theguardian.com),0.7,8,42
-31,How the CIA used Crypto AG encryption devices to spy on countries for decades (2020) (washingtonpost.com),6.0,113,6
-32,Stanford’s Robotics Legacy (2019) (stanford.edu),7.0,19,7
-33,Color Photos of Stalin-Era Soviet Union Taken by a US diplomat (rarehistoricalphotos.com),9.0,187,9
-34,Damped Springs (2012) (ryanjuckett.com),12.0,57,12
-35,That's Interesting (1971) (nyu.edu),12.0,42,12
-36,Brute.Fail: Watch brute force attacks fail in real time (brute.fail),22.0,643,22
-37,New warning messages might as well be fatal errors (utoronto.ca),8.0,30,8
-38,Brainformers: Trading Simplicity for Efficiency (arxiv.org),14.0,75,14
-39,"Samuel Morland, Magister Mechanicorum (2017) (headstuff.org)",11.0,25,11
-40,27 years later and the Psion 3a is still wonderful (2020) (mcgst.com),24.0,323,1
-41,Intelligent Brains Take Longer to Solve Difficult Problems (bihealth.org),17.0,309,17
-42,Lisa: Steve Jobs’ sabotage and Apple’s burial (youtube.com),2.0,14,2
-43,RWKV: Reinventing RNNs for the Transformer Era (Paper Explained) (youtube.com),0.6833333333333333,3,41
-44,The planning of U.S. physician shortages (2020) (niskanencenter.org),15.0,193,15
-45,The First Livestream from Mars (npr.org),3.0,15,3
-46,Taking a new look at fundamental tech for quiet undersea propulsion (darpa.mil),16.0,45,16
-47,Asia Sentinel Blocked in Singapore (asiasentinel.com),16.0,83,16
-48,Tomb Raider (filfre.net),16.0,184,16
-49,Vectorious: BLAS-accelerated linear algebra for TypeScript (github.com/mateogianolio),16.0,47,16
-50,A Data-Centric Introduction to Computing (dcic-world.org),7.0,39,7
-51,WinUAE 5.0.0 (winuae.net),17.0,38,17
-52,This Month with Nim: April and May 2023 (nim-lang.org),15.0,33,15
-53,When the Neighbors Don’t Like Your 10-Foot-Tall Transformer Statues (nytimes.com),17.0,47,17
-54,"Pierre Menard, Author of the Quixote (wikipedia.org)",12.0,48,12
-55,Mementos: System Support for Long-Running Computation on RFID-Scale Devices (umass.edu),9.0,16,9
-56,Brazil develops tropical wheat and predicts self-sufficiency in 5 years (ukragroconsult.com),17.0,208,17
-57,He made linear algebra fun (news.mit.edu),24.0,318,1
-58,Turing Trains (cr31.co.uk),19.0,57,19
-59,Supreme Court Rules Companies Can Sue Striking Workers for 'Sabotage' (vice.com),3.0,49,3
-60,California spent $17B on homelessness – it’s not working (wsj.com),24.0,469,1
-61,The Black Dandy of Buenos Aires (publicdomainreview.org),14.0,32,14
-62,ChatGPT Forgot My Startup (twitter.com/seveibar),5.0,17,5
-63,Teen neurostimulation of dopamine circuit reverses genetic deficits in PF cortex (elifesciences.org),16.0,61,16
-64,Speed running Monkey Island (grumpygamer.com),23.0,222,23
-65,Multi-Agent Reinforcement Learning: Foundations and Modern Approaches (marl-book.com),20.0,39,20
-66,"Supreme Court sides with Slack, putting direct listings in jeopardy (axios.com)",19.0,137,19
-67,The NixOS Foundation’s Call to Action: S3 Costs Require Community Support (nixos.org),15.0,279,15
-68,Operation Triangulation: iOS devices targeted with previously unknown malware (securelist.com),24.0,136,1
-69,"Archive of the Military Tribunal at Nuremberg, 1945-46 (stanford.edu)",21.0,118,21
-70,"School district sues Meta, Google, and TikTok over ‘mental health crisis’ (theverge.com)",7.0,153,7
-71,"The Analog Thing: an open source, educational, low-cost modern analog computer (the-analog-thing.org)",24.0,253,1
-72,Radiation-hardened Quine (2014) (github.com/mame),24.0,355,1
-73,In vitro biological system of cultured brain cells has learned to play Pong (nature.com),22.0,136,22
-74,React Server Component from Scratch (github.com/reactwg),24.0,58,1
-75,Render a neural network into CUDA/HIP code (github.com/facebookincubator),24.0,167,1
-76,A new attack can unmask anonymous users on any major browser (2022) (wired.com),22.0,149,22
-77,Calling time on DNSSEC: The costs exceed the benefits (mattb.nz),19.0,107,19
-78,VGA driver using PIO and DMA on the RP2040 (vanhunteradams.com),24.0,64,1
-79,Lisa Su saved AMD – Now she wants Nvidia's AI crown (forbes.com/sites/iainmartin),24.0,221,1
-80,Deep-brain stimulation during sleep strengthens memory: study (uclahealth.org),18.0,88,18
-81,We spoke with 5 people who work with AI about what keeps them up at night (nytimes.com),4.0,18,4
-82,Facebook to block news for some users in Canada (ft.com),24.0,51,1
-83,Stop Eliminating Perfectly Good Candidates by Asking Them the Wrong Questions (hbr.org),7.0,113,7
-84,Falcon 40B LLM (which beats Llama) now Apache 2.0 (twitter.com/thom_wolf),48.0,414,2
-85,New Security Warning Issued for Google's 1.8B Gmail Users (forbes.com/sites/gordonkelly),2.0,32,2
-86,The World Wide Web (1994) (linuxjournal.com),22.0,54,22
-87,North America is now the growth leader for new battery factories (electrek.co),24.0,199,1
-88,Proven (Dot Lol) (omglol.news),22.0,40,22
-89,Refurb weekend: Commodore 128DCR (oldvcr.blogspot.com),21.0,48,21
-90,Christopher Strachey and the dawn of interactive text (if50.substack.com),19.0,39,19
-91,Photography's new bag of tricks (1984) (nytimes.com),19.0,21,19
-92,You Probably Don't Need OAuth2/OpenID Connect: Here's Why (hackernoon.com),5.0,10,5
-93,How to make fancy road trip maps with R and OpenStreetMap (andrewheiss.com),24.0,349,1
-94,Learn x86-64 assembly by writing a GUI from scratch (2020) (gaultier.github.io),48.0,618,2
-95,The explosive legacy of the hand sanitizer boom (wired.com),24.0,136,1
-96,Skybox AI: Use AI to generate 3D worlds (blockadelabs.com),24.0,132,1
-97,"Ask HN: If we make it open source, how do we monetize it?",10.0,19,10
-98,Phase Locked State Machines (onevariable.com),23.0,48,23
-99,Effect of repeated low-level red light on myopia prevention (jamanetwork.com),23.0,121,23
-100,SiFive Gives Its WorldGuard Security Model to the RISC-V Community (allaboutcircuits.com),23.0,84,23
-101,Ted Chiang: ‘The machines we have now are not conscious’ (ft.com),7.0,29,7
-102,Workers rely on medieval era tech to reconstruct the Notre Dame (popsci.com),24.0,104,1
-103,New open-source datasets for music-based development (metabrainz.org),24.0,121,1
-104,Solid state active cooling on a Mini PC (theregister.com),24.0,83,1
-105,Kenneth Anger has died (dangerousminds.net),24.0,91,1
-106,The New Obsidian Icon (obsidian.md),19.0,31,19
-107,Firmware is broken terminology (hacktivis.me),17.0,28,17
-108,Additional recommendations for designing experiments to learn about the world [pdf] (columbia.edu),13.0,9,13
-109,Chelsea Manning 10 years after her sentence (elpais.com),4.0,7,4
-110,Caltech's Space Solar Power Demonstrator Wirelessly Transmits Power in Space (caltech.edu),17.0,28,17
-111,The Firm – Star Trekkin' (youtube.com),0.7666666666666667,3,46
-112,Using Google’s code history to write more code (googleblog.com),24.0,131,1
-113,"Owners of 143,000 Lincoln SUVs warned to park outside due to fire risk (cnn.com)",3.0,4,3
-114,Witch – macOS window switcher replacement (manytricks.com),24.0,143,1
-115,System76's coreboot open firmware manages to disable Intel ME for Raptor Lake (system76.com),24.0,269,1
-116,Family Photos vs 256 Kb RAM (laplab.me),24.0,70,1
-117,Slide to Unlock (uwaterloo.ca),72.0,1169,3
-118,Systems explained by Humberto Maturana (2021) (open.edu),22.0,67,22
-119,Thoughts on React vs. Vue vs. Everything Else in 2023 (chrlschn.medium.com),24.0,38,1
-120,Vectorization: Introduction (cornell.edu),24.0,306,1
-121,Show HN: Verify LLM Generated Code with a Spreadsheet,24.0,81,1
-122,Porting Python Projects to Rust (jelmer.uk),19.0,12,19
-123,My approach to building large technical projects (mitchellh.com),24.0,213,1
-124,"On understanding data abstraction, revisited (2009) [pdf] (utexas.edu)",24.0,34,1
-125,Federated Machine Learning: Concept and Applications (pdf) (2019) (arxiv.org),20.0,9,20
-126,Show HN: Local implementation of text-to-3D using Shap-E (github.com/kedzkiest),24.0,59,1
-127,"Ask HN: Real-life, ridiculous security incidents?",17.0,58,17
-128,"Show HN: Automating daily reports, because fuck it (gist.github.com)",24.0,100,1
-129,Suspicious Activity: What Are German Fighter Pilots Doing in China? (spiegel.de),2.0,6,2
-130,"Eventually everything will evaporate, not only black holes (ru.nl)",24.0,51,1
-131,Migrate away from data URLs in SVG <use> element (chrome.com),24.0,27,1
-132,Ask HN: Who is hiring? (June 2023),48.0,384,2
-133,Pure Rust implementation of a minimal GPT language model (github.com/keyvank),20.0,17,20
-134,Neverflow: C macros that guard against buffer overflows (github.com/skullchap),24.0,113,1
-135,Ask HN: What other news feeds do you read besides Hacker News?,7.0,208,7
-136,Speeduino – Arduino based engine management (github.com/noisymime),24.0,119,1
-137,Zig is hard but worth it (ratfactor.com),48.0,395,2
-138,Targeted attack on our management with the Triangulation Trojan (kaspersky.com),24.0,192,1
-139,"Show HN: I made CSS Pro, a re-imagined Devtools for web design (csspro.com)",48.0,494,2
-140,The 77% Threshold (seths.blog),14.0,5,14
-141,Show HN: HN Resume to Jobs – AI Powered Job Matching Tailored to Your Resume (hnresumetojobs.com),24.0,211,1
-142,Ask HN: Freelancer? Seeking freelancer? (June 2023),48.0,43,2
-143,Lem is the editor/IDE well-tuned for Common Lisp (lem-project.github.io),21.0,11,21
-144,"A midcentury map of New York, packed with weird local lore (2019) (atlasobscura.com)",24.0,60,1
-145,Launch HN: Onu (YC W23) – Turn scripts into internal tools in minutes,72.0,157,3
-146,US military has been observing ‘metallic orbs’ making extraordinary ‘maneuvers’ (thehill.com),21.0,110,21
-147,When digital nomads come to town (restofworld.org),3.0,49,3
-148,Brave Browser introduces vertical tabs (brave.com),48.0,281,2
-149,What interns wrought at Jane Street (2018) (janestreet.com),23.0,50,23
-150,"When markets melt down, these traders cash in (wsj.com)",24.0,61,1
+1,"Show HN: Non.io, a Reddit-like platform Ive been working on for the last 4 years (non.io)",3,890,3
+2,Understanding DeepMind's sorting algorithm (justine.lol),3,150,3
+3,Killing Community (marginalia.nu),3,148,3
+4,Pixelfed Introduces Import from Instagram (pixelfed.blog),4,101,4
+5,Escape from Silicon Valley (alternative visions of computation) (monroelab.net),2,27,2
+6,Show HN: Stable Diffusion powered level editor for a 2D game (generalrobots.substack.com),5,191,5
+7,Every Signature Is Broken: Insecurity of Microsoft Office’s Ooxml Signatures (usenix.org),8,255,8
+8,Melange 1.0: Compile OCaml / ReasonML to JavaScript (buttondown.email/anmonteiro),4,140,4
+9,Reddit crashed because of the growing subreddit blackout (theverge.com),1,90,1
+10,Scripting with Elixir (underjord.io),13,29,1
+11,Edge sends images you view online to Microsoft (neowin.net),5,551,5
+12,"Show HN: FlingUp, a Reddit-like platform Ive been building for the last 2 years (flingup.com)",0,76,54
+13,EasyPost (YC S13) Is Hiring (easypost.com),3,0,3
+14,"Earth's rotation, with the camera locked to the sky instead of the ground (mastodon.social)",1,91,1
+15,The power of keeping a coding journal (2014) (thomasburette.com),6,120,6
+16,Cloudflare Is Having Issues (cloudflarestatus.com),5,310,5
+17,A developer's view of Vision Pro (david-smith.org),3,138,3
+18,The US Is Openly Stockpiling Dirt on All Its Citizens (wired.com),0,25,23
+19,Desktop Linux Hardening (2022) (privsec.dev),10,188,10
+20,Launch HN: DevCycle (YC W14) – a feature flag platform built for developers,4,36,4
+21,21st-century editors should keep their hands off of 20th-century books (washingtonpost.com),3,113,3
+22,How is Apache APISIX Fast? (api7.ai),13,15,2
+23,Never waste a good crisis – a profit-price spiral in Germany (ing.com),0,4,36
+24,Early 1980s Datsun/Nissan Voice Alert phonograph unit [video] (youtube.com),13,46,5
+25,Block Adware and Malware with /etc/hosts (github.com/stevenblack),7,79,7
+26,A Tale of Unwanted Disruption: My Week Without Amazon (medium.com/bjax_),4,25,2
+27,"The “smolnet”, build for friends and friends of friends (communitywiki.org)",8,146,8
+28,Did This Writer Know Tennessee Williams? (newyorker.com),16,15,3
+29,Juggling Lab GIF Server (jugglinglab.org),28,125,10
+30,Reddit.com appears to be having an outage,6,710,6
+31,The continuing tragedy of CSS (paulrobertlloyd.com),2,66,2
+32,Why Montana kids are suing the state over climate change (vox.com),0,11,40
+33,Life Is So Terrible and Beautiful at the Same Time (johnpweiss.com),10,125,10
+34,Why Perl? (two-wrongs.com),11,145,11
+35,A New Antitrust Doctrine (platformonomics.com),2,4,2
+36,Douglas Crockford on JavaScript (browsertech.com),11,146,11
+37,Mojo is a much better “Objective-C without the C” than Swift ever was (metaobject.com),31,150,13
+38,Why Dying People Often Experience a Burst of Lucidity (scientificamerican.com),1,15,1
+39,Ask HN: Anyone else Bitwarden account being attacked,2,13,2
+40,The concurrence of three climatic events (climatecasino.net),5,389,5
+41,"Ask HN: Intel Mac Pro Users with > 192GB of RAM, Views on New Machine?",2,19,2
+42,Apple TV+ 'Monsterverse' Show Filming in 3D for Vision Pro Viewing (macrumors.com),2,20,2
+43,AI-powered church service in Germany draws a large crowd (arstechnica.com),3,20,3
+44,WHO advises against use of artificial sweeteners (un.org),5,157,4
+45,Inside the Wuhan lab weeks before Covid (thetimes.co.uk),45,624,1
+46,Dev vs. Ops (2017) (bassi.io),31,45,10
+47,Video to video with Stable Diffusion (stable-diffusion-art.com),16,397,16
+48,How Dowries Are Fuelling a Femicide Epidemic (newyorker.com),2,132,2
+49,US Supreme Court's dog toy ruling puts parody products on notice (reuters.com),8,120,8
+50,Debian GNU/Hurd 2023 (gnu.org),11,164,11
+51,The Surprising Power of Documentation (vadimkravcenko.com),18,305,18
+52,An UPS strike could devastate the economy. It could be just 8 weeks away (cnn.com),5,34,5
+53,The Spy Who Called Me (nytimes.com),38,15,7
+54,Tiger Woods and Rory McIlroy are launching a new indoor golf league (twitter.com/joepompliano),1,4,1
+55,"Silvio Berlusconi, scandal-ridden former Italian prime minister, dies aged 86 (theguardian.com)",4,19,4
+56,Canada’s Big Flex in Space (thewalrus.ca),6,50,6
+57,Ask HN: Why doesn't Reddit just acquire 3rd party apps?,2,13,2
+58,Living in Airbnbs full time isn’t easy (2021) (ourfreedomyears.com),34,50,14
+59,Penguin T4 GNU/Linux Laptop (thinkpenguin.com),7,82,7
+60,Enshittification: How Platforms Die (pluralistic.net),3,19,3
+61,"How to buy a social network, with Tumblr CEO Matt Mullenweg (theverge.com)",7,52,7
+62,Millions of usable hard drives are being destroyed (bbc.com),8,71,8
+63,"Judge denies Amazon’s, Apple’s motions to dismiss class action price-fixing suit (arstechnica.com)",16,214,16
+64,Intel is all-in on backside power delivery (ieee.org),22,331,21
+65,How to make a QR code with Stable Diffusion (stable-diffusion-art.com),23,362,23
+66,Study recommends mandatory 3-year vacation so astronauts' brains can recover (theregister.com),6,33,6
+67,Robinhood’s May Crypto Trading Volume Falls 68% to $2.1B (coindesk.com),5,17,5
+68,Leetcode Is Down (leetcode.com),1,4,1
+69,Cities: Skylines II [video] (youtube.com),6,114,6
+70,"Ask HN: Dang, what do HN's traffic numbers look like today?",6,87,6
+71,Upgrading my Chumby 8 kernel part 5: graphics (downtowndougbrown.com),17,66,17
+72,US FTC seeks to block Microsoft's acquisition of Activision -source (reuters.com),3,11,3
+73,Talking Novel Architectures and EL Capitan with Lawrence Livermore (nextplatform.com),1,3,1
+74,Little Snitch “denied” connections leak your IP address: Developer response (lapcatsoftware.com),3,16,3
+75,"Obesity changes the brain, with ‘no sign of reversibility,’ expert says (cnn.com)",0,8,45
+76,Did Reddit just destroy mobile browser access? (reddit.com),19,1209,19
+77,7245/7806 subreddits that pledged to go private are currently dark (nextflow.cloud),4,57,4
+78,El Paquete Semanal (wikipedia.org),24,177,21
+79,Hacking the PHR-803T (2014) (diyouware.com),59,23,15
+80,Self-healing code is the future of software development (stackoverflow.blog),15,42,4
+81,Who needs the Metaverse? Meet the people still living on Second Life (theguardian.com),19,56,6
+82,The Tyranny of Structurelessness (1970) (jofreeman.com),24,264,1
+83,The Dutch government wants automatic permission to target victims of hackers (berthub.eu),30,271,1
+84,JPEG XL against AVIF tested on ImageEngine (mastodon.online),27,242,1
+85,Temperature-dependent RNA editing in octopus recodes the neural proteome (cell.com),38,93,16
+86,The moral hazards of being beautiful (wsj.com),7,44,7
+87,Google to Get Hit with EU Antitrust Charges for Ad Tech Abuses (bloomberg.com),3,8,3
+88,The computer graphics industry got started at the university of Utah (ieee.org),70,321,2
+89,Going NoPhone (libreplanet.org),4,60,4
+90,From Stacks to Trees: A new aliasing model for Rust (ralfj.de),60,188,1
+91,One man’s 8-bit quest to finish his teenage Commodore 64 RPG (arstechnica.com),27,214,1
+92,In the Mind of Marie: A Haunting Encounter in the Gardens of Versailles (1913) (publicdomainreview.org),43,38,17
+93,Read the new Twitter CEO’s first email to employees (theverge.com),1,11,1
+94,"UTF-21, a toy character encoding (evanhahn.com)",58,89,18
+95,Ask HN: Alternatives to Reddit,6,445,6
+96,Logistics challenges of saving Air India’s diverted 777 in Russia (flightradar24.com),24,159,1
+97,Private key redaction: Ur doin it rong (2020) (hezmatt.org),23,81,17
+98,US-made wind and solar components are now cheaper than imports (electrek.co),6,10,6
+99,Overview of C++ language support in Apple Clang (developer.apple.com),27,64,18
+100,Reddit Strike Has Started (reddark.untone.uk),27,1897,1
+101,The Mobian Bookworm has landed (mobian.org),13,6,13
+102,Building Effective Teams (gamedeveloper.com),22,27,22
+103,For a billion years of Earth's history our days were only 19 hours long (phys.org),2,3,2
+104,Apple Execs on Facebook (2011) (techemails.com),23,167,23
+105,Convex Optimization (2004) [pdf] (stanford.edu),61,116,20
+106,FTC to file injunction seeking to block Microsoft’s acquisition of Activision (cnbc.com),4,7,4
+107,Reddit goes down fully as thousands of subreddits protest API changes (9to5mac.com),5,128,5
+108,‘It’s not even good for money laundering’: Nassim Taleb lashes out at Bitcoin (fortune.com),16,52,16
+109,Mental Liquidity (collabfund.com),32,214,1
+110,Why aren't black box flight recorders better? (afar.com),34,143,1
+111,The Mao-Kissinger Meeting of 1973 (gaodawei.wordpress.com),69,212,2
+112,Surging stockmarkets are powered by artificial intelligence (economist.com),21,78,21
+113,“the aggregate thermodynamics of what is happening [...] is staggering” (twitter.com/pkedrosky),18,86,18
+114,Domain knowledge or a lack thereof (2013) (jacquesmattheij.com),61,102,1
+115,The Guide to Sleeping in Airports (sleepinginairports.net),25,100,1
+116,"Show HN: Java REST without annotations, DI nor reactive streams (github.com/martingeisse)",27,140,1
+117,Books on Starting a Profitable SaaS Business (stratoflow.com),24,67,1
+118,Show HN: OpenObserve – Elasticsearch/Datadog alternative (github.com/openobserve),34,189,1
+119,The Value of Personal Data in Internet Commerce (ssrn.com),12,4,12
+120,A compact overview of JDK 21’s “frozen” feature list (vived.io),29,158,1
+121,Apple Executive Discusses New Mac Pro's Lack of Graphics Card Support (macrumors.com),20,51,20
+122,"Barracuda urges replacing, not patching, its email security gateways (krebsonsecurity.com)",48,362,2
+123,Treebomination: Convert a scikit-learn decision tree into a Keras model (github.com/dobiasd),28,76,23
+124,CS:GO: From Zero to 0-Day (neodyme.io),37,225,1
+125,This is valid Python syntax (bitecode.dev),33,128,1
+126,A Brief History of the Corporation: 1600 to 2100 (2011) (ribbonfarm.com),26,80,1
+127,Fark redesign is now live (2007) (fark.com),15,422,15
+128,Add $4 WiFi Logging to IKEA’s $12 Air Quality Sensor (Wemos and Vindriktning) (hackaday.com),29,168,1
+129,Mercedes beats Tesla to autonomous driving in California (theregister.com),55,456,2
+130,New York City will charge drivers going downtown (cnn.com),54,378,2
+131,The role of eyebrows in face recognition [pdf] (web.mit.edu),37,25,19
+132,Stack Overflow Moderation Strike Update (meta.stackexchange.com),19,78,19
+133,The Bay Area German bar that brought down Apple’s famed iPhone security (sfgate.com),54,153,1
+134,The Food Timeline – A history of all foods (foodtimeline.org),27,23,1
+135,Show HN: I wrote a book about Google Maps (gmapsbook.com),12,6,12
+136,"Before he was the Unabomber, Ted Kaczynski was a mind-control test subject (washingtonpost.com)",35,406,1
+137,My Uneventful Correspondence with the Unabomber (medium.com/prose-matters),7,9,7
+138,Reddit Is Down (downdetector.com),6,35,6
+139,HSTS preload adoption and challenges (alexsci.com),31,26,1
+140,The Value of Personal Data in Internet Commerce (ssrn.com),23,12,21
+141,Handoff Waste and Taylorism (two-wrongs.com),47,68,1
+142,The Art of Leadership: Lessons from Art Blakey (albertcory50.substack.com),15,4,15
+143,Csexp: S-Expressions over the Network (racket-lang.org),28,107,1
+144,Why are blocks on Bluesky public? (atproto.com),25,82,1
+145,Hacking the Philips Sonicare NFC Password (twitter.com/atc1441),30,121,1
+146,Code and Programming Projects (chrisgregory.me),22,34,22
+147,EU deal paves way for gig economy workers to receive greater protection (ft.com),5,4,5
+148,Searchable and sortable H1B salary database (jobsort.com),41,161,1
+149,I created Clippy [video] (youtube.com),78,126,1
+150,The curious death of Oppenheimer’s mistress (2015) (nuclearsecrecy.com),41,110,1
