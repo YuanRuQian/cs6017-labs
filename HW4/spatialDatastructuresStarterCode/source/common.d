@@ -73,6 +73,14 @@ AABB!N boundingBox(size_t N)(Point!N[] points){
     return ret;
 }
 
+// Calculate the center coordinate for each dimension by averaging the minimum and maximum coordinates
+Point!N getCenter(size_t N)(AABB!N aabb) {
+    Point!N center;
+    foreach (i; 0 .. N) {
+        center[i] = (aabb.min[i] + aabb.max[i]) / 2;
+    }
+    return center;
+}
 
 //return the point in an AABB to p
 //This will be useful for the KNN methods of the tree data structures
@@ -83,16 +91,19 @@ Point!N closest(size_t N)(AABB!N aabb, Point!N p){
     return p;
 }
 
-unittest{
-
-    auto points = [Point!2([1,2]), Point!2([-2, 5])];
+unittest {
+    auto points = [Point!2([1, 2]), Point!2([-2, 5])];
     auto aabb = boundingBox(points);
     assert(aabb.min == Point!2([-2, 2]));
     assert(aabb.max == Point!2([1, 5]));
 
-    assert(closest(aabb, Point!2([0,0])) == Point!2([0,2])); //call closest using the normal function syntax
-    assert(aabb.closest(Point!2([0.5,3])) == Point!2([0.5,3]));  //call it using the method-like syntax... does the same thing
+    assert(closest(aabb, Point!2([0, 0])) == Point!2([0, 2])); // Call closest using the normal function syntax
+    assert(aabb.closest(Point!2([0.5, 3])) == Point!2([0.5, 3])); // Call it using the method-like syntax... does the same thing
+
+    auto center = getCenter(aabb);
+    assert(center == Point!2([-0.5, 3.5]));
 }
+
 
 //Used for the BucketKNN, so you can probably ignore this!
 //
@@ -251,3 +262,112 @@ unittest{
     //no guarantees here...
     writeln("gaussian points bounding box: ", boundingBox(gPoints));
 }
+
+bool isSamePoint(size_t dim)(Point!dim a, Point!dim b) {
+    for (size_t i = 0; i < dim; i++) {
+        if (a[i] != b[i])
+            return false;
+    }
+    return true;
+}
+
+bool isSameArray(size_t dim)(Point!dim[] a, Point!dim[] b)
+{
+    if (a.length != b.length)
+        return false;
+
+    foreach (const ae; a)
+    {
+        bool found = false;
+        foreach (const be; b)
+        {
+            if (isSamePoint(ae, be))
+            {
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+            return false;
+    }
+    return true;
+}
+
+unittest {
+    // Create two arrays of points with the same elements but in different order
+    Point!2[] array1 = [Point!2([1, 2]), Point!2([3, 4]), Point!2([5, 6])];
+    Point!2[] array2 = [Point!2([3, 4]), Point!2([1, 2]), Point!2([5, 6])];
+
+    // Test isSameArray
+    assert(isSameArray(array1, array2), "isSameArray should return true");
+
+    // Create two arrays of points with different elements
+    Point!2[] array3 = [Point!2([1, 2]), Point!2([3, 4]), Point!2([5, 6])];
+    Point!2[] array4 = [Point!2([7, 8]), Point!2([9, 10]), Point!2([11, 12])];
+
+    // Test isSameArray
+    assert(!isSameArray(array3, array4), "isSameArray should return false");
+}
+
+void printPointPositions(size_t dim)(Point!dim[] points) {
+    foreach (const point; points) {
+        write("[");
+        for (size_t i = 0; i < dim; i++) {
+            write(point[i]);
+            if (i < dim - 1)
+                write(", ");
+        }
+        writeln("]");
+    }
+}
+
+bool circleRectangleOverlap(Point!2 center, float radius, AABB!2 aabb) {
+    float aabbXCenter = (aabb.min[0] + aabb.max[0]) / 2;
+    float aabbYCenter = (aabb.min[1] + aabb.max[1]) / 2;
+    float circleDistanceX = abs(center[0] - aabbXCenter);
+    float circleDistanceY = abs(center[1] - aabbYCenter);
+    float halfAABBWidth = (aabb.max[0] - aabb.min[0]) / 2;
+    float halfAABBHeight = (aabb.max[1] - aabb.min[1]) / 2;
+
+    if(circleDistanceX > (halfAABBWidth + radius)) {
+        return false;
+    }
+
+    if(circleDistanceY > (halfAABBHeight + radius)) {
+        return false;
+    }
+
+    if (circleDistanceX <= halfAABBWidth) {
+        return true;
+    }
+
+    if (circleDistanceY <= halfAABBHeight) {
+        return true;
+    }
+
+    float cornerDistanceSquare = pow(circleDistanceX - halfAABBWidth, 2) + pow(circleDistanceY - halfAABBHeight, 2);
+
+    return cornerDistanceSquare <= pow(radius, 2);
+}
+
+unittest {
+    // Test 1: Circle and rectangle overlap
+    Point!2 circleCenter1 = Point!2([3, 3]);
+    float circleRadius1 = 2;
+    AABB!2 rectangle1 = boundingBox!2([Point!2([1, 1]), Point!2([5, 5])]);
+    assert(circleRectangleOverlap(circleCenter1, circleRadius1, rectangle1) == true);
+
+    // Test 2: Circle and rectangle do not overlap
+    Point!2 circleCenter2 = Point!2([10, 10]);
+    float circleRadius2 = 2;
+    assert(circleRectangleOverlap(circleCenter2, circleRadius2, rectangle1) == false);
+}
+
+
+
+
+
+
+
+
+
