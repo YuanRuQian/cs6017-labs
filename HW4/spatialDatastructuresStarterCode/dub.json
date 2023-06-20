@@ -1,14 +1,10 @@
 {
-  "name": "spatialdatastructuresind",
-  "description": "Implementation of data structures for efficient KNN queries on points",
-  "authors": ["Skeleton code by Ben Jones"],
-  "copyright": "Copyright © 2020, Skeleton code by Ben Jones",
-  "license": "proprietary",
-  "dependencies": {},
-  "versions": ["VibeDefaultMain"],
-  "sourcePaths": ["source"],
-  "mainSourceFile": "source/app.d",
-  "targetType": "executable",
-  "targetName": "app",
-  "targetPath": ""
+    "authors": [
+	"Skeleton code by Ben Jones"
+    ],
+    "copyright": "Copyright © 2020, Skeleton code by Ben Jones",
+    "description": "Implementation of data structures for efficient KNN queries on points",
+    "license": "proprietary",
+    "name": "spatialdatastructuresind",
+
 }
