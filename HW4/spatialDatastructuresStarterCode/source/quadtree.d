@@ -43,27 +43,19 @@ struct QuadTree(size_t maxPointsPerAABB) {
             P2 centerPoint = getCenter(node.aabb);
 
             P2[] greaterPointsDividedByX = points.partitionByDimension!0(centerPoint[0]);
-            writeln("greaterPointsDividedByX:");
             printPointPositions!2(greaterPointsDividedByX);
             P2[] smallerPointsDividedByX = points[0 .. $ - greaterPointsDividedByX.length];
-            writeln("smallerPointsDividedByX:");
             printPointPositions!2(smallerPointsDividedByX);
 
-            // smaller x, greater y
             auto northWestPoints = smallerPointsDividedByX.partitionByDimension!1(centerPoint[1]);
-            // smaller x, smaller y
             auto southWestPoints = smallerPointsDividedByX[0 .. $ - northWestPoints.length];
-            // greater x, greater y
             auto northEastPoints = greaterPointsDividedByX.partitionByDimension!1(centerPoint[1]);
-            // greater x, smaller y
             auto southEastPoints = greaterPointsDividedByX[0 .. $ - northEastPoints.length];
 
-            // smaller x, greater y
             AABB2 northWestAABB;
             northWestAABB.min = Point!2([node.aabb.min[0], centerPoint[1]]);
             northWestAABB.max = Point!2([centerPoint[0], node.aabb.max[1]]);
 
-            // smaller x, smaller y
             AABB2 southWestAABB;
             southWestAABB.min = node.aabb.min;
             southWestAABB.max = centerPoint;
@@ -75,43 +67,10 @@ struct QuadTree(size_t maxPointsPerAABB) {
             AABB2 southEastAABB;
             southEastAABB.min = Point!2([centerPoint[0], node.aabb.min[1]]);
             southEastAABB.max = Point!2([node.aabb.max[0], centerPoint[1]]);
-
-            writeln("================");
-            writeln("north west aabb: ");
-            writeln(northWestAABB.min[0], ",", northWestAABB.min[1], ",", northWestAABB.max[0], ",", northWestAABB.max[1]);
-            writeln("north west points: ");
-            printPointPositions!2(northWestPoints);
-            foreach(p; northWestPoints) {
-                // assert(ifPointIsInAABB(p, northWestAABB) == true);
-            }
+            
             node.northWest = buildTree(northWestPoints, northWestAABB);
-
-            writeln("south west aabb: ");
-            writeln(southWestAABB.min[0], ",", southWestAABB.min[1], ",", southWestAABB.max[0], ",", southWestAABB.max[1]);
-            writeln("south west points: ");
-            printPointPositions!2(southWestPoints);
-            foreach(p; southWestPoints) {
-                // assert(ifPointIsInAABB(p, southWestAABB) == true);
-            }
             node.southWest = buildTree(southWestPoints, southWestAABB);
-
-            writeln("north east aabb: ");
-            writeln(northEastAABB.min[0], ",", northEastAABB.min[1], ",", northEastAABB.max[0], ",", northEastAABB.max[1]);
-            writeln("north east points: ");
-            printPointPositions!2(northEastPoints);
-            foreach(p; northEastPoints) {
-                // assert(ifPointIsInAABB(p, northEastAABB) == true);
-            }
             node.northEast = buildTree(northEastPoints, northEastAABB);
-
-            writeln("south east aabb: ");
-            writeln(southEastAABB.min[0], ",", southEastAABB.min[1], ",", southEastAABB.max[0], ",", southEastAABB.max[1]);
-            writeln("south east points: ");
-            printPointPositions!2(southEastPoints);
-            foreach(p; southEastPoints) {
-                writeln("check if p:", p[0], "," , p[1]);
-                // assert(ifPointIsInAABB(p, southEastAABB) == true);
-            }
             node.southEast = buildTree(southEastPoints, southEastAABB);
 
             return node;
@@ -225,7 +184,7 @@ struct QuadTree(size_t maxPointsPerAABB) {
     }
 }
 
-/*
+
 unittest {
     // test QuadTree against DumbKNN
 
@@ -266,23 +225,3 @@ unittest {
         assert(dumbQuery.length == quadQuery.length && isSameArray(dumbQuery, quadQuery));
     }
 }
-*/
-
-
-unittest{
-    //I'd include unitttesting code for each of your data structures to test with
-    //use a small # of points and manually check that you get the answers you expect
-    auto points = [Point!2([.5, .5]), Point!2([1, 1]),
-    Point!2([0.75, 0.4]), Point!2([0.4, 0.74])];
-    //since the points are 2D, the data structure is a DumbKNN!2
-    auto quadTree = QuadTree!1(points);
-    auto quadTreeRQ = quadTree.rangeQuery(Point!2([0,0]), 1);
-
-    writeln("quadTreeRQ length: ", quadTreeRQ.length);
-
-    auto dumbKnn = DumbKNN!2(points);
-    auto dumbKnnRQ = dumbKnn.rangeQuery(Point!2([0,0]), 1);
-
-    writeln("dumbKnnRQ length: ", dumbKnnRQ.length);
-}
-
