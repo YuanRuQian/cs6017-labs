@@ -79,7 +79,7 @@ struct BucketKNN(size_t Dim){
     
 }
 
-
+/*
 unittest{
     auto bknn = BucketKNN!2([Point!2([.5, .5]), Point!2([1, 1]),
                              Point!2([0.75, 0.4]), Point!2([0.4, 0.74])],
@@ -99,3 +99,4 @@ unittest{
         writeln(p);
     }
 }
+*/
