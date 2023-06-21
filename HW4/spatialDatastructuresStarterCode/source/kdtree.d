@@ -10,7 +10,7 @@ struct KDTreeNode(size_t dim) {
 
 struct KDTree(size_t dim) {
 
-    private KDTreeNode!dim* root;
+    KDTreeNode!dim* root;
 
     this(Point!dim[] points) {
         KDTreeNode!dim[] KDNodes = new KDTreeNode!dim[](points.length);

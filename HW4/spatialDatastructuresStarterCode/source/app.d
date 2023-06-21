@@ -43,9 +43,60 @@ void plotQuadTreeGraph(string pointsFileName, string rectsFileName, Point!2[] po
     rectsFile.close();
 }
 
+void plot2DKDTreeGraph(string dataFileName, Point!2[] points) {
+    File file = File(dataFileName, "w");
+    auto kdTree = KDTree!2(points);
+    file.writeln("pointX,pointY,lineStartX,lineStartY,lineEndX,lineEndY,splitDim");
+
+    // Write point x, point y, line start, and end of the split line to the file
+    void recurse(KDTreeNode!2* node, AABB!2 aabb) {
+        if (node == null) {
+            return;
+        }
+
+        if (node.splitDim == 0) {
+            file.writefln("%.6f,%.6f,%.6f,%.6f,%.6f,%.6f,%.6f", node.point[0], node.point[1], node.point[0], aabb.min[1], node.point[0], aabb.max[1], node.splitDim);
+
+            AABB!2 leftBoundingBox;
+            leftBoundingBox.min = aabb.min;
+            leftBoundingBox.max = Point!2([node.point[0], aabb.max[1]]);
+            recurse(node.left, leftBoundingBox);
+
+            AABB!2 rightBoundingBox;
+            rightBoundingBox.min = Point!2([node.point[0], aabb.min[1]]);
+            rightBoundingBox.max = aabb.max;
+            recurse(node.right, rightBoundingBox);
+        } else {
+            file.writefln("%.6f,%.6f,%.6f,%.6f,%.6f,%.6f,%.6f", node.point[0], node.point[1], aabb.min[0], node.point[1], aabb.max[0], node.point[1], node.splitDim);
+
+            AABB!2 leftBoundingBox;
+            leftBoundingBox.min = aabb.min;
+            leftBoundingBox.max = Point!2([aabb.max[0], node.point[1]]);
+            recurse(node.left, leftBoundingBox);
+
+            AABB!2 rightBoundingBox;
+            rightBoundingBox.min = Point!2([aabb.min[0], node.point[1]]);
+            rightBoundingBox.max = aabb.max;
+            recurse(node.right, rightBoundingBox);
+        }
+    }
+
+    auto aabb = boundingBox!2(points);
+    recurse(kdTree.root, aabb);
+
+    file.close();
+}
+
+
+
 void main()
 {
     // visualize quad tree
     plotQuadTreeGraph("QuadTreeGaussianPoints.csv", "QuadTreeGaussianRects.csv",getGaussianPoints!2(100));
     plotQuadTreeGraph("QuadTreeUniformPoints.csv", "QuadTreeUniformRects.csv", getUniformPoints!2(100));
+
+    // visualize 2D KD tree
+    plot2DKDTreeGraph("2DKDTreeGaussian.csv", getGaussianPoints!2(200));
+    plot2DKDTreeGraph("2DKDTreeUniform.csv",getUniformPoints!2(200));
+
 }
