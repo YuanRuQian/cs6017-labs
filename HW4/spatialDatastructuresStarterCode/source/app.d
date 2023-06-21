@@ -6,139 +6,46 @@ import bucketknn;
 import quadtree;
 import kdtree;
 
+void plotQuadTreeGraph(string pointsFileName, string rectsFileName, Point!2[] points) {
+    File pointsFile = File(pointsFileName, "w");
+    File rectsFile = File(rectsFileName, "w");
+
+    pointsFile.writeln("pointX,pointY");
+    rectsFile.writeln("rectCenterX,rectCenterY,rectWidth,rectHeight");
+
+    auto quadTree = QuadTree!2(points);
+
+    void recurse(QuadTreeNode* node) {
+        if(node == null) {
+            return ;
+        }
+
+        auto rectCenter = getCenter(node.aabb);
+        auto rectWidth = node.aabb.max[0] - node.aabb.min[0];
+        auto rectHeight = node.aabb.max[1] - node.aabb.min[1];
+        rectsFile.writeln(rectCenter[0], ",", rectCenter[1], ",",rectWidth, ",", rectHeight);
+
+        if(node.isLeaf) {
+            foreach(point; node.points) {
+                pointsFile.writeln(point[0], ",", point[1]);
+            }
+        } else {
+            recurse(node.northWest);
+            recurse(node.southWest);
+            recurse(node.northEast);
+            recurse(node.southEast);
+        }
+    }
+
+    recurse(quadTree.root);
+
+    pointsFile.close();
+    rectsFile.close();
+}
+
 void main()
 {
-    // Time QuadTree with different points per AABB
-    writeln("QuadTree knnQuery with different points per AABB results");
-    // Create a file to write the results
-    string pointsPerAABBFilename = "QuadTreeWithDifferentPointsPerAABB.csv";
-    File pointsPerAABBFile = File(pointsPerAABBFilename, "w");
-    pointsPerAABBFile.writeln("numPointsPerAABB,averageTime");
-    // Calculate the powers of 2 sequence from 1 to 256
-    ulong[] quadTreeNumPointsSequence;
-    for (int i = 0; i <= 8; ++i)
-    {
-        quadTreeNumPointsSequence ~= 2^^i;
-    }
-    foreach (numPoints; quadTreeNumPointsSequence)
-    {{
-        enum numTrainingPoints = 1000;
-        auto trainingPoints = getGaussianPoints!2(numTrainingPoints);
-        auto testingPoints = getUniformPoints!2(100);
-        auto qt = QuadTree!2(trainingPoints);
-        writeln("Tree with ", numPoints, " points per AABB built");
-        auto sw = StopWatch(AutoStart.no);
-        sw.start;
-        ulong totalTime = 0;
-        size_t experimentTimes = 50;
-        foreach (const ref qp; testingPoints)
-        {
-            for (int i = 0; i < experimentTimes; ++i)
-            {
-                sw.start;
-                qt.knnQuery(qp, 10);
-                sw.stop;
-                totalTime += sw.peek.total!"usecs";
-                sw.reset;
-            }
-        }
-
-        double averageTime = totalTime / experimentTimes / testingPoints.length;
-        // Write the results to the file
-        pointsPerAABBFile.writeln(numPoints, ",", averageTime);
-        writeln("Average time for ", numPoints, " points: ", averageTime, " usecs");
-    }}
-
-    pointsPerAABBFile.close();
-
-    // Time QuadTree with different K values
-    writeln("QuadTree knnQuery with different K results");
-
-    enum numPointsPerAABB = 4;
-
-    // Create a file to write the results
-    string knnFilename = "QuadTreeWithDifferentK.csv";
-    File knnFile = File(knnFilename, "w");
-    knnFile.writeln("K,averageTime");
-
-    // Define different values of K
-    int[] knnValues;
-    for (int k = 10; k <= 100; k += 10)
-    {
-        knnValues ~= k;
-    }
-
-    foreach (knn; knnValues)
-    {{
-        auto trainingPoints = getGaussianPoints!2(1000);
-        auto testingPoints = getUniformPoints!2(100);
-        auto qt = QuadTree!numPointsPerAABB(trainingPoints);
-        auto sw = StopWatch(AutoStart.no);
-        sw.start;
-        ulong totalTime = 0;
-        size_t experimentTimes = 10;
-
-        foreach (const ref qp; testingPoints)
-        {
-            for (int i = 0; i < experimentTimes; ++i)
-            {
-                sw.start;
-                qt.knnQuery(qp, knn);
-                sw.stop;
-                totalTime += sw.peek.total!"usecs";
-                sw.reset;
-            }
-        }
-
-        double averageTime = totalTime / experimentTimes / testingPoints.length;
-        writeln("Average time with K =", knn, ": ", averageTime, " usecs");
-
-        // Write the results to the file
-        knnFile.writeln(knn, ",", averageTime);
-    }}
-
-    knnFile.close();
-
-    writeln("QuadTree knnQuery with different point pool size");
-    string differentPointPoolResultFileName = "QuadTreeWithDifferentPointPoolSize.csv";
-    File differentPointPoolResults = File(differentPointPoolResultFileName, "w");
-    differentPointPoolResults.writeln("pointPoolSize,averageTime");
-
-    // Define different values of K
-    int[] poolSizes;
-    for (int k = 1; k <= 10; k++)
-    {
-        poolSizes ~= k*1000;
-    }
-
-    foreach (trainingPoolSize ; poolSizes)
-    {{
-        auto trainingPoints = getGaussianPoints!2(trainingPoolSize);
-        auto testingPoints = getUniformPoints!2(100);
-        auto qt = QuadTree!numPointsPerAABB(trainingPoints);
-
-        auto sw = StopWatch(AutoStart.no);
-        sw.start;
-        ulong totalTime = 0;
-        size_t experimentTimes = 10;
-
-        foreach (const ref qp; testingPoints)
-        {
-            for (int i = 0; i < experimentTimes; ++i)
-            {
-                sw.start;
-                qt.knnQuery(qp, 10);
-                sw.stop;
-                totalTime += sw.peek.total!"usecs";
-                sw.reset;
-            }
-        }
-
-        double averageTime = totalTime / experimentTimes / testingPoints.length;
-        writeln("Average time with point pool size =", trainingPoolSize, ": ", averageTime, " usecs");
-        differentPointPoolResults.writeln(trainingPoolSize, ",", averageTime);
-    }}
-
-    differentPointPoolResults.close();
-
+    // visualize quad tree
+    plotQuadTreeGraph("QuadTreeGaussianPoints.csv", "QuadTreeGaussianRects.csv",getGaussianPoints!2(100));
+    plotQuadTreeGraph("QuadTreeUniformPoints.csv", "QuadTreeUniformRects.csv", getUniformPoints!2(100));
 }
