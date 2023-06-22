@@ -147,10 +147,8 @@ unittest{
 //left half has all points with a smaller coordinate in SortingDim
 //and the right half has all poitns with greater coordinate in sortingDim
 auto medianByDimension(size_t SortingDim, size_t PointDim)(Point!PointDim[] points){
-
     return points.topN!((a, b) => a[SortingDim] < b[SortingDim])(points.length/2);
 }
-
 
 unittest{
     auto points = [Point!2([1,2]), Point!2([3,1]), Point!2([2,3])];
@@ -271,27 +269,28 @@ bool isSamePoint(size_t dim)(Point!dim a, Point!dim b) {
     return true;
 }
 
-bool isSameArray(size_t dim)(Point!dim[] a, Point!dim[] b)
-{
-    if (a.length != b.length)
+bool isSameArray(size_t dim)(Point!dim[] aArray, Point!dim[] bArray) {
+    if (aArray.length != bArray.length) {
         return false;
-
-    foreach (const ae; a)
-    {
-        bool found = false;
-        foreach (const be; b)
-        {
-            if (isSamePoint(ae, be))
-            {
-                found = true;
-                break;
-            }
-        }
-        if (!found)
-            return false;
     }
+
+    Point!dim center;
+    foreach (i; 0 .. dim) {
+        center[i] = 0.0;
+    }
+
+    aArray.sort!((a, b) => distance(a, center) < distance(b, center));
+    bArray.sort!((a, b) => distance(a, center) < distance(b, center));
+
+    for (size_t i = 0; i < aArray.length; ++i) {
+        if (!isSamePoint(aArray[i], bArray[i])) {
+            return false;
+        }
+    }
+
     return true;
 }
+
 
 unittest {
     // Create two arrays of points with the same elements but in different order

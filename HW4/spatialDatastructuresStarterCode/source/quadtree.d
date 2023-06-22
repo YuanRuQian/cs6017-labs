@@ -26,9 +26,9 @@ struct QuadTree(size_t maxPointsPerAABB) {
         this.root = buildTree(points, boundingBox!2(points));
     }
 
-    bool ifPointIsInAABB(P2 point, AABB2 aabb) {
-        return point[0] >= aabb.min[0] && point[0] <= aabb.max[0] && point[1] >= aabb.min[1] && point[1] <= aabb.max[1];
-    }
+    //bool ifPointIsInAABB(P2 point, AABB2 aabb) {
+    //    return point[0] >= aabb.min[0] && point[0] <= aabb.max[0] && point[1] >= aabb.min[1] && point[1] <= aabb.max[1];
+    //}
 
     QuadTreeNode* buildTree(P2[] points, AABB2 aabb) {
         QuadTreeNode* node = new QuadTreeNode();
@@ -111,46 +111,20 @@ struct QuadTree(size_t maxPointsPerAABB) {
         return ret;
     }
 
-    float closetDistanceInAABB(QuadTreeNode* node, P2 center) {
-        float minDistance = float.infinity;
-
-        void recurse(QuadTreeNode* currentNode) {
-            if (currentNode is null) {
-                return;
-            }
-
-            if (currentNode.isLeaf) {
-                foreach (const point; currentNode.points) {
-                    float distanceToPoint = distance(center, point);
-                    minDistance = min(minDistance, distanceToPoint);
-                }
-            } else {
-                if (circleRectangleOverlap(center, minDistance, currentNode.northWest.aabb)) {
-                    recurse(currentNode.northWest);
-                }
-                if (circleRectangleOverlap(center, minDistance, currentNode.southWest.aabb)) {
-                    recurse(currentNode.southWest);
-                }
-                if (circleRectangleOverlap(center, minDistance, currentNode.northEast.aabb)) {
-                    recurse(currentNode.northEast);
-                }
-                if (circleRectangleOverlap(center, minDistance, currentNode.southEast.aabb)) {
-                    recurse(currentNode.southEast);
-                }
-            }
-        }
-
-        recurse(node);
-        return minDistance;
-    }
-
 
     P2[] knnQuery(P2 center, int k) {
         auto pq = makePriorityQueue(center);
 
-        bool checkIfHasCloserPoints(QuadTreeNode* node) {
-            return closetDistanceInAABB(node, center) <= distance(pq.front(), center);
+        bool checkIfPossibleHasCloserPoints(QuadTreeNode* node) {
+            auto greatestDistanceInPQ = distance(pq.front(), center);
+            auto centerDistanceToAABBMinX = abs(node.aabb.min[0] - center[0]);
+            auto centerDistanceToAABBMaxX = abs(node.aabb.max[0] - center[0]);
+            auto centerDistanceToAABBMinY = abs(node.aabb.min[1] - center[1]);
+            auto centerDistanceToAABBMaxY = abs(node.aabb.max[1] - center[1]);
+            auto minDistance = [centerDistanceToAABBMinX, centerDistanceToAABBMaxX, centerDistanceToAABBMinY, centerDistanceToAABBMaxY].minElement;
+            return greatestDistanceInPQ >= minDistance;
         }
+
 
         void recurse(QuadTreeNode* node) {
             if (node is null)
@@ -164,16 +138,16 @@ struct QuadTree(size_t maxPointsPerAABB) {
                     }
                 }
             } else {
-                if(pq.length < k || checkIfHasCloserPoints(node.northWest)) {
+                if(pq.length < k || checkIfPossibleHasCloserPoints(node.northWest)) {
                     recurse(node.northWest);
                 }
-                if(pq.length < k || checkIfHasCloserPoints(node.northEast)) {
+                if(pq.length < k || checkIfPossibleHasCloserPoints(node.northEast)) {
                     recurse(node.northEast);
                 }
-                if(pq.length < k || checkIfHasCloserPoints(node.southWest)) {
+                if(pq.length < k || checkIfPossibleHasCloserPoints(node.southWest)) {
                     recurse(node.southWest);
                 }
-                if(pq.length < k || checkIfHasCloserPoints(node.southEast)) {
+                if(pq.length < k || checkIfPossibleHasCloserPoints(node.southEast)) {
                     recurse(node.southEast);
                 }
             }

@@ -41,7 +41,6 @@ struct DumbKNN(size_t Dim){
 
 }
 
-/*
 unittest{
     //I'd include unitttesting code for each of your data structures to test with
     //use a small # of points and manually check that you get the answers you expect
@@ -61,5 +60,4 @@ unittest{
         writeln(p);
     }
 }
-*/
 

@@ -81,8 +81,9 @@ struct KDTree(size_t dim) {
                 return;
 
             float distanceSq = pow(distance(node.point, center), 2);
-
-            if (distanceSq <= radius * radius) {
+            float radiusSq = pow(radius, 2);
+    
+            if (distanceSq <= radiusSq) {
                 ret ~= node.point;
             }
 
@@ -92,11 +93,11 @@ struct KDTree(size_t dim) {
 
             if (distToSplit < 0) {
                 recurse(node.left);
-                if (distToSplit * distToSplit <= radius * radius)
+                if (distToSplit * distToSplit <= radiusSq)
                     recurse(node.right);
             } else {
                 recurse(node.right);
-                if (distToSplit * distToSplit <= radius * radius)
+                if (distToSplit * distToSplit <= radiusSq)
                     recurse(node.left);
             }
         }
