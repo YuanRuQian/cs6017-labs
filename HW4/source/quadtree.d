@@ -43,9 +43,7 @@ struct QuadTree(size_t maxPointsPerAABB) {
             P2 centerPoint = getCenter(node.aabb);
 
             P2[] greaterPointsDividedByX = points.partitionByDimension!0(centerPoint[0]);
-            printPointPositions!2(greaterPointsDividedByX);
             P2[] smallerPointsDividedByX = points[0 .. $ - greaterPointsDividedByX.length];
-            printPointPositions!2(smallerPointsDividedByX);
 
             auto northWestPoints = smallerPointsDividedByX.partitionByDimension!1(centerPoint[1]);
             auto southWestPoints = smallerPointsDividedByX[0 .. $ - northWestPoints.length];
@@ -171,7 +169,6 @@ unittest {
     foreach(testingCenter; testingPoints) {
         auto dumbRange = dumb.rangeQuery(testingCenter, 0.5);
         auto quadRange = quadTree.rangeQuery(testingCenter, 0.5);
-        writeln("pass testing center for quad tree range query: ", testingCenter[0], ", ", testingCenter[1]);
         assert(quadRange.length == dumbRange.length && isSameArray(quadRange, dumbRange));
     }
 
