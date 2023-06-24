@@ -26,10 +26,6 @@ struct QuadTree(size_t maxPointsPerAABB) {
         this.root = buildTree(points, boundingBox!2(points));
     }
 
-    //bool ifPointIsInAABB(P2 point, AABB2 aabb) {
-    //    return point[0] >= aabb.min[0] && point[0] <= aabb.max[0] && point[1] >= aabb.min[1] && point[1] <= aabb.max[1];
-    //}
-
     QuadTreeNode* buildTree(P2[] points, AABB2 aabb) {
         QuadTreeNode* node = new QuadTreeNode();
         node.aabb = aabb;

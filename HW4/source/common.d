@@ -113,6 +113,7 @@ unittest {
 //bucketed data structure
 //You can probably safely ignore looking at this implementation... it's ugly
 //look at the unitttest below that uses it
+// big o : O(Dim^2)
 auto getIndicesRange(size_t Dim)(Indices!Dim start, Indices!Dim stop){
     auto helper(size_t N)(){
         auto thisIota = iota(start[N], stop[N] +1).map!(x => [x]);

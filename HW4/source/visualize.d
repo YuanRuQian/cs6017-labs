@@ -4,7 +4,6 @@ import common;
 import quadtree;
 import kdtree;
 
-// TODO: ZOOM IN
 void plotQuadTreeGraph(string pointsFileName, string rectsFileName, Point!2[] points) {
     File pointsFile = File(pointsFileName, "w");
     File rectsFile = File(rectsFileName, "w");
