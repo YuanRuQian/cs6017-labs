@@ -17,7 +17,7 @@ void time2DBucketKNNWithDifferentK(string fileName) {
             enum numTrainingPoints = 1000;
             auto totalTime = 0;
             foreach (testId; 1..maxTestingTimesPerSingleTest) {
-                auto trainingPoints = getGaussianPoints!2(1000);
+                auto trainingPoints = getUniformPoints!2(1000);
                 auto testingPoints = getUniformPoints!2(100);
                 auto kd = BucketKNN!2(trainingPoints, cast(int)pow(numTrainingPoints/64, 1.0/2));
                 auto sw = StopWatch(AutoStart.no);

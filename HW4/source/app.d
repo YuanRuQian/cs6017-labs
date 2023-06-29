@@ -16,11 +16,11 @@ void main()
 
     // start timinig experiments
 
-    // time2DBucketKNNWithDifferentK("2DBucketKNNWithDifferentK.csv");
+    time2DBucketKNNWithDifferentK("2DBucketKNNWithDifferentK.csv");
 
     // time2DBucketKNNWithDifferentN("2DBucketKNNWithDifferentN.csv");
 
-    timeQuadTreeWithDifferentMaxPointsPerLeaf("QuadTreeWithDifferentMaxPointsPerLeaf.csv");
+    // timeQuadTreeWithDifferentMaxPointsPerLeaf("QuadTreeWithDifferentMaxPointsPerLeaf.csv");
 
     // timeKDTreeWithDifferentDimension("KDTreeWithDifferentDimension.csv");
 }
