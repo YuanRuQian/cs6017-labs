@@ -39,8 +39,9 @@ struct KDTree(size_t dim) {
             auto store = start;
             foreach (currentPtr; start .. end) {
                 if (currentPtr.point[splitDim] < pivot) {
-                    if (currentPtr != store)
+                    if (currentPtr != store) {
                         swap(currentPtr.point, store.point);
+                    }
                     store++;
                 }
             }

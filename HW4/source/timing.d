@@ -73,7 +73,7 @@ void timeQuadTreeWithDifferentMaxPointsPerLeaf(string fileName) {
         {
             auto totalTime = 0;
             foreach (testId; 1..maxTestingTimesPerSingleTest) {
-                auto trainingPoints = getGaussianPoints!2(1000);
+                auto trainingPoints = getUniformPoints!2(1000);
                 auto testingPoints = getUniformPoints!2(100);
                 auto kd = QuadTree!mi(trainingPoints);
                 auto sw = StopWatch(AutoStart.no);
